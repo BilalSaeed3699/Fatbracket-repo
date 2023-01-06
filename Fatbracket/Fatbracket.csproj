@@ -373,6 +373,7 @@
     <Content Include="dashboardassets\img\pages\header.png" />
     <Content Include="dashboardassets\img\pages\pricing-arrow-light.png" />
     <Content Include="dashboardassets\img\pages\profile-banner.png" />
+    <Content Include="dashboardassets\img\placeholder.png" />
     <Content Include="dashboardassets\img\products\1.png" />
     <Content Include="dashboardassets\img\products\2.png" />
     <Content Include="dashboardassets\js\app-access-permission.js" />

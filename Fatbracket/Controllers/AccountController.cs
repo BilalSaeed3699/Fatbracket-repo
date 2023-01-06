@@ -225,72 +225,85 @@ namespace Fatbracket.Controllers
                 }
                 else if (UserLoginReult == "1")
                 {
-                    //new changes cookie implementation
-                    HttpCookie UserEmail = Request.Cookies["UserEmail"];
-                    if (UserEmail == null)
-                    {
-                        UserEmail = new HttpCookie("UserEmail");
-                        UserEmail.Value = Convert.ToString(UserInformation.Email);
-                        UserEmail.Expires = DateTime.Now.AddDays(30);
-                    }
-                    else
-                    {
-                        UserEmail.Value = Convert.ToString(UserInformation.Email);
-                    }
-                    Response.Cookies.Add(UserEmail);
-
-                    //Session["UserEmail"] = UserInformation.Email;
-
                     tbluser User = dbEntities.tblusers.Where(x => x.Email == UserInformation.Email).FirstOrDefault();
-                    HttpCookie UserName = Request.Cookies["UserName"];
-                    HttpCookie IsAdmin = Request.Cookies["IsAdmin"];
-                    HttpCookie UserId = Request.Cookies["UserId"];
 
-                    if (UserName == null)
-                    {
-                        UserName = new HttpCookie("UserName");
-                        UserName.Value = Convert.ToString(User.Firstname + User.Lastname);
-                        UserName.Expires = DateTime.Now.AddDays(30);
-                    }
-                    else
-                    {
-                        UserName.Value = Convert.ToString(User.Firstname + User.Lastname);
-                    }
-                    Response.Cookies.Add(UserName);
 
-                    if (IsAdmin == null)
-                    {
-                        IsAdmin = new HttpCookie("IsAdmin");
-                        IsAdmin.Value = Convert.ToString(User.Usertype);
-                        IsAdmin.Expires = DateTime.Now.AddDays(30);
-                    }
-                    else
-                    {
-                        IsAdmin.Value = Convert.ToString(User.Usertype);
-                    }
-                    Response.Cookies.Add(IsAdmin);
+                    HttpCookie cookie1 = new HttpCookie("User");
+                    cookie1["Email"] = User.Email;
+                    cookie1["UserID"] = User.Playerid.ToString();
+                    cookie1["UserType"] = User.Usertype.ToString();
+                    cookie1["UserName"] = User.Firstname + " " + User.Lastname;
+                    cookie1["Imagepath"] = User.Imagepath;
+                   
+                    cookie1.Expires = DateTime.Now.AddDays(1);
+                    Response.Cookies.Add(cookie1);
 
-                    if (UserId == null)
-                    {
-                        UserId = new HttpCookie("UserId");
-                        UserId.Value = Convert.ToString(User.Playerid);
-                        UserId.Expires = DateTime.Now.AddDays(30);
-                    }
-                    else
-                    {
-                        UserId.Value = Convert.ToString(User.Playerid);
-                    }
-                    Response.Cookies.Add(UserId);
+
+                    //HttpCookie UserEmail = Request.Cookies["UserEmail"];
+                    //if (UserEmail == null)
+                    //{
+                    //    UserEmail = new HttpCookie("UserEmail");
+                    //    UserEmail.Value = Convert.ToString(UserInformation.Email);
+                    //    UserEmail.Expires = DateTime.Now.AddDays(30);
+                    //}
+                    //else
+                    //{
+                    //    UserEmail.Value = Convert.ToString(UserInformation.Email);
+                    //}
+                    //Response.Cookies.Add(UserEmail);
+
+                    ////Session["UserEmail"] = UserInformation.Email;
+
+                    
+                    //HttpCookie UserName = Request.Cookies["UserName"];
+                    //HttpCookie IsAdmin = Request.Cookies["IsAdmin"];
+                    //HttpCookie UserId = Request.Cookies["UserId"];
+
+                    //if (UserName == null)
+                    //{
+                    //    UserName = new HttpCookie("UserName");
+                    //    UserName.Value = Convert.ToString(User.Firstname + User.Lastname);
+                    //    UserName.Expires = DateTime.Now.AddDays(30);
+                    //}
+                    //else
+                    //{
+                    //    UserName.Value = Convert.ToString(User.Firstname + User.Lastname);
+                    //}
+                    //Response.Cookies.Add(UserName);
+
+                    //if (IsAdmin == null)
+                    //{
+                    //    IsAdmin = new HttpCookie("IsAdmin");
+                    //    IsAdmin.Value = Convert.ToString(User.Usertype);
+                    //    IsAdmin.Expires = DateTime.Now.AddDays(30);
+                    //}
+                    //else
+                    //{
+                    //    IsAdmin.Value = Convert.ToString(User.Usertype);
+                    //}
+                    //Response.Cookies.Add(IsAdmin);
+
+                    //if (UserId == null)
+                    //{
+                    //    UserId = new HttpCookie("UserId");
+                    //    UserId.Value = Convert.ToString(User.Playerid);
+                    //    UserId.Expires = DateTime.Now.AddDays(30);
+                    //}
+                    //else
+                    //{
+                    //    UserId.Value = Convert.ToString(User.Playerid);
+                    //}
+                    //Response.Cookies.Add(UserId);
 
                     //Session["UserName"] = User.Name;
                     //Session["IsAdmin"] = User.IsAdmin;
                     //Session["UserId"] = User.UserId;
 
-                    if (User.Usertype == 1)
-                    {
-                        User.Playerid = 0;
-                    }
-                    return Json(new { status = UserLoginReult, UserName = User.Firstname + User.Lastname, url = Url.Action("Home", "Dashboard", new { Clientid = User.Playerid }) });
+                    //if (User.Usertype == 1)
+                    //{
+                    //    User.Playerid = 0;
+                    //}
+                    return Json(new { status = UserLoginReult, UserName = User.Firstname + User.Lastname, url = Url.Action("Home", "Dashboard", new { id = User.Playerid }) });
 
                 }
 

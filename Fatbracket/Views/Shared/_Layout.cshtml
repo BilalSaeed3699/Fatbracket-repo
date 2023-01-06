@@ -1,9 +1,47 @@
-﻿<!DOCTYPE html>
+﻿@{ 
+    int UserID = 0;
+    string Email = "";
+    string UserName = "";
+    string UserType = "";
+    string Imagepath = "";
+    HttpCookie cookieObj = Request.Cookies["User"];
+
+    if (@cookieObj != null)
+    {
+        if (@cookieObj["Email"] != null && @cookieObj["Email"] != "")
+        {
+            Email = @cookieObj["Email"];
+        }
+        if (@cookieObj["UserType"] != null && @cookieObj["UserType"] != "")
+        {
+            UserType = @cookieObj["UserType"];
+        }
+        if (@cookieObj["UserName"] != null && @cookieObj["UserName"] != "")
+        {
+            UserName = @cookieObj["UserName"];
+        }
+        if (@cookieObj["Imagepath"] != null && @cookieObj["Imagepath"] != "")
+        {
+            Imagepath = @cookieObj["Imagepath"];
+
+
+        }
+        if (@cookieObj["UserID"] != null && @cookieObj["UserID"] != "")
+        {
+            UserID = Convert.ToInt32(@cookieObj["UserID"]);
+        }
+        if (Imagepath == "")
+        {
+            Imagepath = "/dashboardassets/img/avatars/1.png";
+        }
+    }
+}
+<!DOCTYPE html>
 <html>
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
 
-    <title>Sign In</title>
+    <title>FatBracket</title>
 
     <meta name="description" content="League Action" />
     <meta name="keywords" content="Players League Auction Flatbracket">
@@ -61,9 +99,9 @@
             left: 75%;
         }
 
-        .alert {
+       /* .alert {
             display: none;
-        }
+        }*/
 
         #referalcard {
             border-radius: 25px;
@@ -126,7 +164,7 @@
                             <li class="nav-item navbar-dropdown dropdown-user dropdown">
                                 <a class="nav-link dropdown-toggle hide-arrow" href="javascript:void(0);" data-bs-toggle="dropdown">
                                     <div class="avatar avatar-online">
-                                        <img src="~/dashboardassets/img/avatars/1.png" class="w-px-40 h-auto rounded-circle" />
+                                        <img src="@Imagepath" class="w-px-40 rounded-circle" />
                                         
                                     </div>
                                 </a>
@@ -136,12 +174,12 @@
                                             <div class="d-flex">
                                                 <div class="flex-shrink-0 me-3">
                                                     <div class="avatar avatar-online">
-                                                        <img src="~/dashboardassets/img/avatars/1.png" class="w-px-40 h-auto rounded-circle" />
+                                                        <img src="@Imagepath" class="w-px-40 rounded-circle" />
                                                     </div>
                                                 </div>
                                                 <div class="flex-grow-1">
-                                                    <span class="fw-semibold d-block">Admin</span>
-
+                                                    <span class="fw-semibold d-block">@UserName</span>
+                                                    <span >@Email</span>
                                                 </div>
                                             </div>
                                         </a>
