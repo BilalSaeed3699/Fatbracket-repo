@@ -1,0 +1,472 @@
+﻿
+@{ Layout = null; }
+
+<!DOCTYPE html>
+
+<html lang="en" class="light-style customizer-hide" dir="ltr" data-theme="theme-default" data-assets-path="../../assets/" data-template="vertical-menu-template">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
+
+    <title>Register</title>
+
+    <meta name="description" content="League Action" />
+    <meta name="keywords" content="Players League Auction Flatbracket">
+    <!-- Canonical SEO -->
+    <link rel="canonical" href="https://themeselection.com/products/sneat-bootstrap-html-admin-template/">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="~/dashboardassets/img/favicon.ico" />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com/">
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&amp;display=swap" rel="stylesheet">
+
+    <!-- Icons -->
+    <link href="~/dashboardassets/vendor/fonts/boxicons.css" rel="stylesheet" />
+    <link href="~/dashboardassets/vendor/fonts/fontawesome.css" rel="stylesheet" />
+    <link href="~/dashboardassets/vendor/fonts/flag-icons.css" rel="stylesheet" />
+
+
+    <!-- Core CSS -->
+    <link href="~/dashboardassets/vendor/css/rtl/core.css" rel="stylesheet" />
+    <link href="~/dashboardassets/vendor/css/rtl/theme-default.css" rel="stylesheet" />
+    <link href="~/dashboardassets/css/demo.css" rel="stylesheet" />
+
+
+    <!-- Vendors CSS -->
+    <link href="~/dashboardassets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css" rel="stylesheet" />
+    <link href="~/dashboardassets/vendor/libs/typeahead-js/typeahead.css" rel="stylesheet" />
+
+    <!-- Vendor -->
+    <link href="~/dashboardassets/vendor/libs/formvalidation/dist/css/formValidation.min.css" rel="stylesheet" />
+
+
+    <!-- Page CSS -->
+    <!-- Page -->
+    <link href="~/dashboardassets/vendor/css/pages/page-auth.css" rel="stylesheet" />
+
+    <!-- Helpers -->
+    <script src="~/dashboardassets/vendor/js/helpers.js"></script>
+
+    <!--! Template customizer & Theme config files MUST be included after core stylesheets and helpers.js in the <head> section -->
+    <!--? Template customizer: To hide customizer set displayCustomizer value false in config.js.  -->
+    <script src="~/dashboardassets/vendor/js/template-customizer.js"></script>
+
+    <!--? Config:  Mandatory theme config file contain global vars & default theme options, Set your preferred theme option in this file.  -->
+
+    <script src="~/dashboardassets/js/config.js"></script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async="async" src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+        gtag('config', 'GA_MEASUREMENT_ID');
+    </script>
+    <!-- Custom notification for demo -->
+    <!-- beautify ignore:end -->
+</head>
+<body>
+
+
+    <!-- Content -->
+
+    <div class="authentication-wrapper authentication-cover">
+        <div class="authentication-inner row m-0">
+            <!-- /Left Text -->
+            @*<div class="d-none d-lg-flex col-lg-6 col-xl-6 align-items-center p-5 leftpanel">
+                    <div class="w-100 d-flex justify-content-center">
+
+                        <img src="~/dashboardassets/img/Logo.png" class="img-fluid" alt="Login image" width="400" data-app-dark-img="illustrations/boy-with-rocket-dark.png" data-app-light-img="illustrations/boy-with-rocket-light.png" />
+
+                    </div>
+                </div>*@
+            <!-- /Left Text -->
+            <!-- Login -->
+            <div class="d-flex col-12 col-lg-5 col-xl-5 align-items-center authentication-bg p-sm-5 p-4 " style="margin:0 auto;">
+                <div class=" mx-auto">
+
+                    <!-- /Logo -->
+                    <div class="app-brand mb-5">
+                        <a href="@Url.Action("Index", "Home")" class="app-brand-link gap-2">
+                            <span class="app-brand-logo demo">
+
+                                <img src="~/dashboardassets/img/Logo.png" class="img-fluid" alt="Login image" width="40" data-app-dark-img="illustrations/boy-with-rocket-dark.png" data-app-light-img="illustrations/boy-with-rocket-light.png" />
+
+                            </span>
+                            <span class="app-brand-text demo demo text-body fw-bolder">FatBracket</span>
+                        </a>
+                    </div>
+                    <h4 class="mb-2">Adventure starts here 🚀</h4>
+                    <p class="mb-4">Make your app management easy and fun!</p>
+
+                    <form id="formAuthentication" class="row mb-3" method="POST">
+
+
+                        <div class="col-md-6 mb-3">
+                            <label for="email" class="form-label">First Name</label>
+                            <input type="text" class="form-control" id="txtfirstname" name="email-username" placeholder="Enter first name" autofocus>
+
+                            <div id="lblfirstname" class="fv-plugins-message-container invalid-feedback" style="display:none">
+                                <div data-field="email-username" data-validator="notEmpty">Enter first name</div>
+                            </div>
+
+                        </div>
+
+                        <div class="col-md-6 mb-3">
+                            <label for="email" class="form-label">Last  Name</label>
+                            <input type="text" class="form-control" id="txtlastname" name="email-username" placeholder="Enter last name" autofocus>
+
+                            <div id="lbllastname" class="fv-plugins-message-container invalid-feedback" style="display:none">
+                                <div data-field="email-username" data-validator="notEmpty">Enter last name</div>
+                            </div>
+
+                        </div>
+
+
+                        <div class="col-md-6 mb-3">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="txtemail" name="email-username" placeholder="Enter email" autofocus>
+
+                            <div id="lblemail" class="fv-plugins-message-container invalid-feedback" style="display:none">
+                                <div data-field="email-username" data-validator="notEmpty">Enter email</div>
+                            </div>
+
+
+                            <div id="lblduplicateemail" class="fv-plugins-message-container invalid-feedback" style="display:none">
+                                <div data-field="email-username" data-validator="notEmpty">Email already registered </div>
+                            </div>
+
+
+                            <div id="lblemailformat" class="fv-plugins-message-container invalid-feedback" style="display:none">
+                                <div data-field="email-username" data-validator="notEmpty">Invalid Email Address </div>
+                            </div>
+
+
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="email" class="form-label">Phone</label>
+                            <input type="text" class="form-control" id="txtphone" name="email-username" placeholder="Enter phone" autofocus>
+
+
+                            <div id="lblphone" class="fv-plugins-message-container invalid-feedback" style="display:none">
+                                <div data-field="email-username" data-validator="notEmpty">Enter phone</div>
+                            </div>
+
+                        </div>
+
+
+                        <div class="col-md-6 mb-3">
+                            <label for="email" class="form-label">Handle</label>
+                            <input type="text" class="form-control" id="txthandle" name="email-username" placeholder="Enter handle" autofocus>
+
+                            <div id="lblhandle" class="fv-plugins-message-container invalid-feedback" style="display:none">
+                                <div data-field="email-username" data-validator="notEmpty">Enter handle</div>
+                            </div>
+
+
+                        </div>
+
+
+
+
+                        <div class="col-md-6 mb-3 form-password-toggle">
+                            <div class="d-flex justify-content-between">
+                                <label class="form-label" for="password">Password</label>
+
+                            </div>
+                            <div class="input-group input-group-merge">
+                                <input type="password" id="txtpassword" class="form-control" name="password" placeholder="&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;" aria-describedby="password" />
+                                <span class="input-group-text cursor-pointer"><i class="bx bx-hide"></i></span>
+                            </div>
+
+
+                            <div id="lblpassword" class="fv-plugins-message-container invalid-feedback" style="display:none">
+                                <div data-field="email-username" data-validator="notEmpty">Enter password</div>
+                            </div>
+
+                        </div>
+
+                        <div class="col-md-6 mb-3">
+                            <label for="email" class="form-label">Text Opt-in</label> <br />
+                            <input class="form-check-input" type="checkbox" value="" id="chktxtoptin">
+                            <label class="form-check-label" for="defaultCheck1">
+                                Text Opt-in
+                            </label>
+
+                        </div>
+
+                        <button type="button" id="btnregister" onclick="signup()" class="btn btn-primary d-grid w-100">
+                            Sign up
+                        </button>
+                    </form>
+
+                    <p class="text-center">
+                        <span>Already have an account?</span>
+                        <a href="@Url.Action("Login", "Account")">
+                            <span>Sign in instead</span>
+                        </a>
+                    </p>
+
+
+
+
+                </div>
+            </div>
+            <!-- /Login -->
+        </div>
+    </div>
+
+    <!-- / Content -->
+    @*<div class="buy-now">
+            <a href="https://themeselection.com/products/sneat-bootstrap-html-admin-template/" target="_blank" class="btn btn-danger btn-buy-now">Buy Now</a>
+        </div>*@
+
+
+
+
+    <!-- Core JS -->
+    <!-- build:js assets/vendor/js/core.js -->
+    <script src="~/dashboardassets/vendor/libs/jquery/jquery.js"></script>
+    <script src="~/dashboardassets/vendor/libs/popper/popper.js"></script>
+    <script src="~/dashboardassets/vendor/js/bootstrap.js"></script>
+    <script src="~/dashboardassets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js"></script>
+    <script src="~/dashboardassets/vendor/libs/hammer/hammer.js"></script>
+    <script src="~/dashboardassets/vendor/libs/i18n/i18n.js"></script>
+    <script src="~/dashboardassets/vendor/libs/typeahead-js/typeahead.js"></script>
+
+    <script src="~/dashboardassets/vendor/js/menu.js"></script>
+    <!-- endbuild -->
+    <!-- Vendors JS -->
+    <script src="~/dashboardassets/vendor/libs/formvalidation/dist/js/FormValidation.min.js"></script>
+    <script src="~/dashboardassets/vendor/libs/formvalidation/dist/js/plugins/Bootstrap5.min.js"></script>
+    <script src="~/dashboardassets/vendor/libs/formvalidation/dist/js/plugins/AutoFocus.min.js"></script>
+    <!-- Main JS -->
+    <script src="~/dashboardassets/js/main.js"></script>
+
+
+    <!-- Page JS -->
+    @*<script src="~/dashboardassets/js/pages-auth.js"></script>*@
+
+</body>
+</html>
+
+<script>
+    function signup()
+    {
+
+        var firstname = $("#txtfirstname").val();
+        var lastname = $("#txtlastname").val();
+        var email = $("#txtemail").val();
+        var phone = $("#txtphone").val();
+        var password = $("#txtpassword").val();
+        var handle = $("#txthandle").val();
+        var istxtoptin = 0;
+
+        if ($('#chktxtoptin').is(":checked")) {
+
+            istxtoptin = 1;
+        }
+        else
+        {
+            istxtoptin = 0;
+        }
+        if (firstname == "") {
+            $("#lblfirstname").fadeIn();
+            $("#txtfirstname").removeClass("is-valid");
+            $("#txtfirstname").removeClass("is-invalid");
+            $("#txtfirstname").addClass("is-invalid");
+            return;
+        }
+        else
+        {
+            $("#lblfirstname").fadeOut();
+            $("#txtfirstname").removeClass("is-valid");
+            $("#txtfirstname").removeClass("is-invalid");
+            $("#txtfirstname").addClass("is-valid");
+        }
+
+        if (lastname == "") {
+            $("#lbllastname").fadeIn();
+            $("#txtlastname").removeClass("is-valid");
+            $("#txtlastname").removeClass("is-invalid");
+            $("#txtlastname").addClass("is-invalid");
+            return;
+        }
+        else
+        {
+            $("#lbllastname").fadeOut();
+            $("#txtlastname").removeClass("is-valid");
+            $("#txtlastname").removeClass("is-invalid");
+            $("#txtlastname").addClass("is-valid");
+        }
+
+
+        if (email == "") {
+            $("#lblemail").fadeIn();
+            $("#txtemail").removeClass("is-valid");
+            $("#txtemail").removeClass("is-invalid");
+            $("#txtemail").addClass("is-invalid");
+            return;
+        }
+        else
+        {
+            $("#lblemail").fadeOut();
+            $("#txtemail").removeClass("is-valid");
+            $("#txtemail").removeClass("is-invalid");
+            $("#txtemail").addClass("is-valid");
+        }
+
+
+        var expr = /^([\w-\.]+)@@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/;
+        if (!expr.test(email)) {
+            $("#lblemailformat").fadeIn();
+            $("#txtemail").removeClass("is-valid");
+            $("#txtemail").removeClass("is-invalid");
+            $("#txtemail").addClass("is-invalid");
+            return;
+        }
+        else {
+            $("#lblemailformat").fadeOut();
+            $("#txtemail").removeClass("is-valid");
+            $("#txtemail").removeClass("is-invalid");
+            $("#txtemail").addClass("is-valid");
+        }
+
+
+        if (phone == "") {
+            $("#lblphone").fadeIn();
+            $("#txtphone").removeClass("is-valid");
+            $("#txtphone").removeClass("is-invalid");
+            $("#txtphone").addClass("is-invalid");
+            return;
+        }
+        else {
+            $("#lblphone").fadeOut();
+            $("#txtphone").removeClass("is-valid");
+            $("#txtphone").removeClass("is-invalid");
+            $("#txtphone").addClass("is-valid");
+        }
+
+        if (handle == "") {
+            $("#lblhandle").fadeIn();
+            $("#txthandle").removeClass("is-valid");
+            $("#txthandle").removeClass("is-invalid");
+            $("#txthandle").addClass("is-invalid");
+            return;
+        }
+        else {
+            $("#lblhandle").fadeOut();
+            $("#txthandle").removeClass("is-valid");
+            $("#txthandle").removeClass("is-invalid");
+            $("#txthandle").addClass("is-valid");
+        }
+
+        if (password == "") {
+            $("#lblpassword").fadeIn();
+            $("#txtpassword").removeClass("is-valid");
+            $("#txtpassword").removeClass("is-invalid");
+            $("#txtpassword").addClass("is-invalid");
+            return;
+        }
+        else {
+            $("#lblpassword").fadeOut();
+            $("#txtpassword").removeClass("is-valid");
+            $("#txtpassword").removeClass("is-invalid");
+            $("#txtpassword").addClass("is-valid");
+        }
+
+
+        var UserInfo = {};
+        UserInfo.Firstname = firstname;
+        UserInfo.Lastname = lastname;
+        UserInfo.Email = email;
+        UserInfo.Phone = phone;
+        UserInfo.Textoptin = istxtoptin;
+        UserInfo.Handle = handle;
+        UserInfo.Password = password;
+        UserInfo.Imagename = " ";
+        UserInfo.Imagepath = " ";
+        UserInfo.Usertype = 2;
+
+
+        $.ajax({
+            type: "POST",
+            url: '@Url.Action("registeruser", "Account")',
+            data: '{UserInformation: ' + JSON.stringify(UserInfo) + '}',
+            dataType: "json",
+            contentType: "application/json; charset=utf-8",
+            success: function (result) {
+                window.location.href = result.url;
+            }
+        });
+
+    }
+
+
+    $("#txtemail").focusout(function () {
+        var email = $("#txtemail").val();
+
+        if (email.trim() == "")
+        {
+
+        }
+        else
+        {
+            var expr = /^([\w-\.]+)@@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/;
+            if (!expr.test(email)) {
+                $("#lblemailformat").fadeIn();
+                $("#txtemail").removeClass("is-valid");
+                $("#txtemail").removeClass("is-invalid");
+                $("#txtemail").addClass("is-invalid");
+                return;
+            }
+            else {
+                $("#lblemailformat").fadeOut();
+                $("#txtemail").removeClass("is-valid");
+                $("#txtemail").removeClass("is-invalid");
+                $("#txtemail").addClass("is-valid");
+
+                var UserInfo = {};
+                UserInfo.Email = email;
+
+                $.ajax({
+                    type: "POST",
+                    url: '@Url.Action("verifyregistraton", "Account")',
+                    data: '{UserInformation: ' + JSON.stringify(UserInfo) + '}',
+                    dataType: "json",
+                    contentType: "application/json; charset=utf-8",
+                    success: function (result)
+                    {
+                        if (result.status == 2)
+                        {
+                            $("#lblduplicateemail").fadeIn();
+                            $("#txtemail").removeClass("is-valid");
+                            $("#txtemail").removeClass("is-invalid");
+                            $("#txtemail").addClass("is-invalid");
+                            document.getElementById("btnregister").disabled = true;
+                            document.getElementById("btnregister").style.backgroundColor = 'black';
+                            document.getElementById("btnregister").style.borderColor = "black";
+                        }
+                        else {
+                                $("#lblduplicateemail").fadeOut();
+                                $("#txtemail").removeClass("is-valid");
+                                $("#txtemail").removeClass("is-invalid");
+                            $("#txtemail").addClass("is-isvalid");
+                            document.getElementById("btnregister").disabled = false;
+
+                            document.getElementById("btnregister").style.backgroundColor = '#ff7117';
+                            document.getElementById("btnregister").style.borderColor = "#ff7117";
+                            document.getElementById("btnregister").style.boxshadow = "0 0.125rem 0.25rem 0 rgb(255 113 23)";
+                            }
+                        }
+
+                });
+            }
+        }
+    });
+</script>

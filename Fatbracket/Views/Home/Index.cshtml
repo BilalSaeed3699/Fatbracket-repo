@@ -1,0 +1,485 @@
+﻿@{
+    Layout = null;
+    int Succ = @ViewBag.isContact;
+}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Fatbracket</title>
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+    <link href="~/WebsiteAssets/img/Logo.png" rel="icon">
+    <link href="~/WebsiteAssets/img/apple-touch-icon.png" rel="apple-touch-icon">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+    <link href="~/WebsiteAssets/vendor/animate.css/animate.min.css" rel="stylesheet">
+    <link href="~/WebsiteAssets/vendor/aos/aos.css" rel="stylesheet">
+    <link href="~/WebsiteAssets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="~/WebsiteAssets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="~/WebsiteAssets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <link href="~/WebsiteAssets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="~/WebsiteAssets/vendor/remixicon/remixicon.css" rel="stylesheet">
+    <link href="~/WebsiteAssets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+    <link href="~/WebsiteAssets/css/style.css" rel="stylesheet">
+
+
+    <style>
+        .getstarted {
+            background: #ff7117;
+            border: 0;
+            padding: 10px 24px;
+            color: #fff;
+            transition: 0.4s;
+            border-radius: 50px;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <header id="header" class="fixed-top d-flex align-items-center  header-transparent ">
+        <div class="container d-flex align-items-center justify-content-between">
+
+            <div class="logo">
+                @*<h1><a href="index.html">Eazisols</a></h1>*@
+                <a href="@Url.Action("Index", "Home")"><img src="~/WebsiteAssets/img/Logo.png" alt="" class="img-fluid" style="height:70px"></a>
+            </div>
+
+            <nav id="navbar" class="navbar">
+                <ul>
+                    <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
+                    <li><a class="nav-link scrollto" href="#rules">Rules</a></li>
+                    <li><a class="nav-link scrollto mr-5" href="#contact">Contact</a></li>
+                    
+                </ul>
+                <i class="bi bi-list mobile-nav-toggle"></i>
+            </nav>
+
+        </div>
+    </header>
+    <section id="hero" class="d-flex flex-column justify-content-end align-items-center">
+        <div id="heroCarousel" data-bs-interval="5000" class="container carousel carousel-fade" data-bs-ride="carousel">
+
+            <div class="carousel-item active">
+                <div class="carousel-container">
+                    <h2 class="animate__animated animate__fadeInDown">Welcome to <span>FatBracket</span></h2>
+                    <p class="animate__animated fanimate__adeInUp">
+                        FatBracket Calcutta is a live auction of all 68 teams
+                        participating in the NCAA Men's College Basketball
+                        tournament. FatBracket is not associated in any way with
+                        the NCAA or the tournament and does not give back to the
+                        academic community nor provides any public service of any
+                        kind. This is our brand promise. The sole purpose of
+                        FatBracket is for entertainment, primarily for old married
+                        men.
+                    </p>
+                    <a href="@Url.Action("Login", "Account")" class="btn-get-started animate__animated animate__fadeInUp scrollto">Get Started</a>
+                </div>
+            </div>
+            @*<div class="carousel-item">
+                    <div class="carousel-container">
+                        <h2 class="animate__animated animate__fadeInDown">Lorem Ipsum Dolor</h2>
+                        <p class="animate__animated animate__fadeInUp">Ut velit est quam dolor ad a aliquid qui aliquid. Sequi ea ut et est quaerat sequi nihil ut aliquam. Occaecati alias dolorem mollitia ut. Similique ea voluptatem. Esse doloremque accusamus repellendus deleniti vel. Minus et tempore modi architecto.</p>
+                        <a href="#about" class="btn-get-started animate__animated animate__fadeInUp scrollto">Read More</a>
+                    </div>
+                </div>*@
+            @*<a class="carousel-control-prev" href="#heroCarousel" role="button" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon bx bx-chevron-left" aria-hidden="true"></span>
+            </a>
+
+            <a class="carousel-control-next" href="#heroCarousel" role="button" data-bs-slide="next">
+                <span class="carousel-control-next-icon bx bx-chevron-right" aria-hidden="true"></span>
+            </a>*@
+
+        </div>
+
+        <svg class="hero-waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28 " preserveAspectRatio="none">
+            <defs>
+                <path id="wave-path" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z">
+            </defs>
+            <g class="wave1">
+                <use xlink:href="#wave-path" x="50" y="3" fill="rgba(255,255,255, .1)">
+            </g>
+            <g class="wave2">
+                <use xlink:href="#wave-path" x="50" y="0" fill="rgba(255,255,255, .2)">
+            </g>
+            <g class="wave3">
+                <use xlink:href="#wave-path" x="50" y="9" fill="#fff">
+            </g>
+        </svg>
+    </section>
+    <main id="main">
+        <section id="rules" class="about">
+            <div class="container">
+
+                <div class="section-title" data-aos="zoom-out">
+                    <h2>RULES</h2>
+                    <p>Who we are</p>
+                </div>
+
+                <div class="row content" data-aos="fade-up">
+                    <div class="col-lg-6 pt-4 pt-lg-0">
+
+                        <img src="~/WebsiteAssets/img/FatBracket.png" alt="" class="img-fluid">
+
+
+                    </div>
+                    <div class="col-lg-6">
+                        <p>
+                            FatBracket Calcutta is a live auction of all 68 teams
+                            participating in the NCAA Men's College Basketball
+                            tournament. FatBracket is not associated in any way with
+                            the NCAA or the tournament and does not give back to the
+                            academic community nor provides any public service of any
+                            kind. This is our brand promise. The sole purpose of
+                            FatBracket is for entertainment, primarily for old married
+                            men.
+                        </p>
+                        <ul>
+                            <li>
+                                <i class="ri-check-double-line"></i> Calcutta Organization
+                            </li>
+                            <li><i class="ri-check-double-line"></i> Bidding Process and Limits</li>
+                            <li><i class="ri-check-double-line"></i> Team Dividends</li>
+                            <li><i class="ri-check-double-line"></i> Win Dividends (86% of Total)</li>
+                            <li>
+                                <i class="ri-check-double-line"></i> Prop Dividends (14% of Total)
+                            </li>
+
+
+                        </ul>
+                        <a target="_blank" href="~/WebsiteAssets/img/Sports-Magazine.pdf" class="btn-learn-more">Download</a>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+        <section id="cta" class="cta">
+            <div class="container">
+
+                <div class="row" data-aos="zoom-out">
+                    <div class="col-lg-9 text-center text-lg-start">
+                        <h3>PROPS</h3>
+                        <p>
+                            Winning
+                            blowout specials
+                            and upsets.
+
+                            Strategies, reading
+                            the room, and
+                            successful bidding.
+
+                            Complete rules
+                            and regulations
+
+                        </p>
+                    </div>
+                    <div class="col-lg-3 cta-btn-container text-center">
+                        <a class="cta-btn align-middle" href="~/WebsiteAssets/img/Sports-Magazine.pdf">Download</a>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+        <section id="contact" class="contact">
+            <div class="container">
+
+                <div class="section-title" data-aos="zoom-out">
+                    <h2>Contact</h2>
+                    <p>Contact Us</p>
+                </div>
+
+                <div class="row mt-5">
+
+                    <div class="col-lg-4" data-aos="fade-right">
+                        <div class="info">
+                            <div class="address">
+                                <i class="bi bi-geo-alt"></i>
+                                <h4>Location:</h4>
+                                <p>A108 Adam Street, New York, NY 535022</p>
+                            </div>
+
+                            <div class="email">
+                                <i class="bi bi-envelope"></i>
+                                <h4>Email:</h4>
+                                <p>info@example.com</p>
+                            </div>
+
+                            <div class="phone">
+                                <i class="bi bi-phone"></i>
+                                <h4>Call:</h4>
+                                <p>+1 5589 55488 55s</p>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="col-lg-8 mt-5 mt-lg-0" data-aos="fade-left">
+
+                        @*<form action="@Url.Action("Contact","Home")" method="post" class="php-email-form">*@
+                            <div style="display:none;" class="alert alert-success alert-dismissible fade show" id="SuccessAlert" role="alert">
+                                <strong>Success! </strong> Your message has been sent. Thank you!
+                            </div>
+                            <div style="display:none;" class="alert alert-danger alert-dismissible fade show" id="FailureAlert" role="alert">
+                                <strong>Alert! </strong> There is something issue. Please Try again.<br> Thank you!
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6 form-group">
+                                    <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
+                                    <div id="lblnameerror" class="fv-plugins-message-container invalid-feedback" style="display:none">
+                                        <div data-field="email-username" data-validator="notEmpty">Enter name</div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 form-group mt-3 mt-md-0">
+                                    <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required>
+                                    <div id="lblemailerror" class="fv-plugins-message-container invalid-feedback" style="display:none">
+                                        <div data-field="email-username" data-validator="notEmpty"> Enter email</div>
+                                    </div>
+
+                                    <div id="lblemailvalidation" class="fv-plugins-message-container invalid-feedback" style="display:none">
+                                        <div data-field="email-username" data-validator="notEmpty">Invalid email address</div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 form-group mt-3 mt-md-4">
+                                    <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required>
+                                    <div id="lblsubject" class="fv-plugins-message-container invalid-feedback" style="display:none">
+                                        <div data-field="email-username" data-validator="notEmpty">Enter subject</div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 form-group mt-3 mt-md-4">
+                                    <input type="text" class="form-control" name="phone" id="phone" placeholder="Phone" required>
+                                    <div id="lblphone" class="fv-plugins-message-container invalid-feedback" style="display:none">
+                                        <div data-field="email-username" data-validator="notEmpty">Enter Phone</div>
+                                    </div>
+                                </div>
+                            </div>
+                          
+                            <div class="form-group mt-3">
+                                <textarea class="form-control" name="message" id="message" rows="5" placeholder="Message" required></textarea>
+                                <div id="lblmessage" class="fv-plugins-message-container invalid-feedback" style="display:none">
+                                    <div data-field="email-username" data-validator="notEmpty">Enter Message</div>
+                                </div>
+                            </div>
+
+                            <div class="text-center">
+                                <button id="btnsendcontact" style="background-color: #ff7117; border-color: #ff7117; box-shadow: 0 0.125rem 0.25rem 0 rgb(255 113 23) " onclick="sendcontact()" class="btn btn-primary btn-block mt-3" type="button">Send Message</button>
+                            
+                            </div>
+                        @*</form>*@
+
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+    <footer id="footer">
+        <div class="container">
+            <h3>FatBracket</h3>
+            <p>
+                CALCUTTA
+                PLAYERS
+                HANDBOOK.Winning
+                blowout specials
+                and upsets.
+            </p>
+            <div class="social-links">
+                <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
+                <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
+                <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+                <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
+                <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+            </div>
+            <div class="copyright">
+                &copy; Copyright <strong><span>FatBracket</span></strong>. All Rights Reserved
+            </div>
+            <div class="credits">
+                Designed by <a href="https://eazisols.com/">eazisols</a>
+            </div>
+        </div>
+    </footer>
+
+    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+    <script src="~/WebsiteAssets/vendor/aos/aos.js"></script>
+    <script src="~/WebsiteAssets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="~/WebsiteAssets/vendor/glightbox/js/glightbox.min.js"></script>
+    <script src="~/WebsiteAssets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+    <script src="~/WebsiteAssets/vendor/swiper/swiper-bundle.min.js"></script>
+    <script src="~/WebsiteAssets/js/jquery-3.2.1.min.js"></script>
+    <script src="~/WebsiteAssets/js/main.js"></script>
+
+    <script src="~/dashboardassets/js/sweetalert.min.js"></script>
+
+    <script>
+
+        $(document).ready(function () {
+
+            if (@Succ == 1)
+            {
+                $('html, body').animate({
+                    scrollTop: $('#contact').offset().top
+                }, 'slow');
+                $('#SuccessAlert').fadeIn();
+            }
+            else if (@Succ == 2)
+            {
+                $('html, body').animate({
+                    scrollTop: $('#contact').offset().top
+                }, 'slow');
+                $('#FailureAlert').fadeIn();
+            }
+        });
+
+
+
+        function sendcontact()
+        {
+
+            var name = $("#name").val();
+            var email = $("#email").val();
+            var subject = $("#subject").val();
+            var phone = $("#phone").val();
+            var message = $("#message").val();
+
+
+
+
+            if (name.trim() == "" && email.trim() == "" && subject.trim() == "" && phone.trim() == "" && message.trim() == "") {
+                $("#lblnameerror").fadeIn();
+                $("#lblemailerror").fadeIn();
+                $("#lblsubject").fadeIn();
+                $("#lblphone").fadeIn();
+                $("#lblmessage").fadeIn();
+                return;
+
+            }
+
+            else if (email.trim() == "" && subject.trim() == "" && phone.trim() == "" && message.trim() == "") {
+                $("#lblnameerror").fadeOut();
+                $("#lblemailerror").fadeIn();
+                $("#lblsubject").fadeIn();
+                $("#lblphone").fadeIn();
+                $("#lblmessage").fadeIn();
+                return;
+
+            }
+            else if (subject.trim() == "" && phone.trim() == "" && message.trim() == "") {
+                $("#lblnameerror").fadeOut();
+                $("#lblemailerror").fadeOut();
+                $("#lblsubject").fadeIn();
+                $("#lblphone").fadeIn();
+                $("#lblmessage").fadeIn();
+                return;
+
+            }
+
+            else if (phone.trim() == "" && message.trim() == "") {
+                $("#lblnameerror").fadeOut();
+                $("#lblemailerror").fadeOut();
+                $("#lblsubject").fadeOut();
+                $("#lblphone").fadeIn();
+                $("#lblmessage").fadeIn();
+                return;
+
+            }
+
+
+            else if (message.trim() == "") {
+                $("#lblnameerror").fadeOut();
+                $("#lblemailerror").fadeOut();
+                $("#lblsubject").fadeOut();
+                $("#lblphone").fadeOut();
+                $("#lblmessage").fadeIn();
+                return;
+            }
+            else
+            {
+                $("#lblnameerror").fadeOut();
+                $("#lblemailerror").fadeOut();
+                $("#lblsubject").fadeOut();
+                $("#lblphone").fadeOut();
+                $("#lblmessage").fadeOut();
+
+
+                var expr = /^([\w-\.]+)@@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/;
+                if (!expr.test(email)) {
+                    $("#lblemailvalidation").fadeIn();
+                    $("#email").removeClass("is-valid");
+                    $("#email").removeClass("is-invalid");
+                    $("#email").addClass("is-invalid");
+                    return;
+                }
+                else {
+                    $("#lblemailvalidation").fadeOut();
+                    $("#email").removeClass("is-valid");
+                    $("#email").removeClass("is-invalid");
+                    $("#email").addClass("is-valid");
+                }
+            }
+
+            document.getElementById("btnsendcontact").innerHTML = " <img id='LoginLoader' style='Width: 34px!important; height: 30px!important' src='/dashboardassets/img/loaders.gif' /> &nbsp; Please Wait...";
+            document.getElementById("btnsendcontact").style.backgroundColor = 'black';
+            document.getElementById("btnsendcontact").style.borderColor = "black";
+            document.getElementById("btnsendcontact").disabled = true;
+            document.getElementById("btnsendcontact").style.boxShadow = "0 0.125rem 0.25rem 0 rgb(0,0,0)";
+
+
+
+             var UserInfo = {};
+            UserInfo.email = email;
+            UserInfo.name = name;
+            UserInfo.subject = subject;
+            UserInfo.message = message;
+            UserInfo.phone = phone;
+
+            $.ajax({
+                type: "POST",
+                url: '@Url.Action("Contact", "Home")',
+                data: JSON.stringify(UserInfo),
+                dataType: "json",
+                contentType: "application/json; charset=utf-8",
+                success: function (result) {
+                    swal({
+                        title: "FatBracket Contact Info",
+                        text: "Your information has been submitted to us, we  will be in contact with you. \n \n Thank you.",
+                        icon: "success",
+                        buttons: false,
+                        timer: 3000
+                    });
+
+                    document.getElementById("btnsendcontact").innerHTML = "Send Message";
+                    document.getElementById("btnsendcontact").style.backgroundColor = '#ff7117';
+                    document.getElementById("btnsendcontact").style.borderColor = "#ff7117";
+                    document.getElementById("btnsendcontact").style.boxshadow = "0 0.125rem 0.25rem 0 rgb(255,113,23)";
+                    document.getElementById("btnsendcontact").disabled = false;
+
+                    $("#name").val("");
+                    $("#email").val("");
+                    $("#subject").val("");
+                    $("#phone").val("");
+                    $("#message").val("");
+                }
+
+
+            });
+
+           
+
+
+
+
+            
+        }
+    </script>
+</body>
+
+</html>
